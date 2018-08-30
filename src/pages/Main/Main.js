@@ -2,6 +2,7 @@ import React from 'react'
 import { requestAccountDetail } from '../../redux/actions/viewAccount'
 import { connect } from 'react-redux'
 import './Main.css'
+import { Link} from "react-router";
 
 class Main extends React.Component {
 
@@ -14,7 +15,7 @@ class Main extends React.Component {
           this.props.requestAccountDetail()
         }}></div>
         <div className="bottom-navigation">
-          <div className="login-button">login</div>
+          <div className="login-button"><Link to="/login">login</Link></div>
           <div className="profile-button">register</div>
         </div>
       </div>
@@ -24,7 +25,8 @@ class Main extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    testState: state.viewAccount
+    testState: state.viewAccount,
+    postLogin: state.postLoginReducer
   }
 }
 
