@@ -31,6 +31,8 @@ export const failure = (state, action) => {
 export const reducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case POST_LOGIN:
+            console.log('POST LOGIN')
+            console.log(action)
             return request(state, action)
         case POST_LOGIN_SUCCESS:
             return success(state,action)

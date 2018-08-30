@@ -1,10 +1,18 @@
 import React from 'react'
 import InputDataForm from './../../components/InputDataForm/InputDataForm'
 import {connect} from 'react-redux'
+import {browserHistory} from 'react-router'
 
 class InputData extends React.Component {
+  componentWillMount () {
+    if (this.props.data === undefined) {
+      browserHistory.push('/login')
+    }
+  }
+
   handleSubmit = (values) => {
-    this.props.dispatch({type: 'ON_SUBMIT_INPUT_DATA', payload: values})
+    const token = this.props.data.token
+    this.props.dispatch({type: 'ON_SUBMIT_INPUT_DATA', payload: {values, token}})
   }
 
   render() {
@@ -13,7 +21,11 @@ class InputData extends React.Component {
 }
 
 function mapStateToProps (state) {
-  return {}
+  console.log('STATE')
+  console.log(state)
+  return {
+    data: state.postLoginReducer.data
+  }
 }
 
 function mapDispatchToProps (dispatch) {
