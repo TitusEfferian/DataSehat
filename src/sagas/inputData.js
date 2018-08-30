@@ -12,5 +12,6 @@ export function* submitDataMedCheck(request) {
   } finally {
     console.log('success')
     browserHistory.push('/dashboard')
+    alert('Successfully insert the data')
   }
 }
