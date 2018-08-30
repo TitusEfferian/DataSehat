@@ -11,9 +11,7 @@ class Main extends React.Component {
     console.log(this.props)
     return (
       <div className="App">
-        <div className="box" onClick={() => {
-          this.props.requestAccountDetail()
-        }}></div>
+        <div className="box"><Link to='/input_record'>Add Record</Link></div>
         <div className="bottom-navigation">
           <div className="login-button"><Link to="/login">login</Link></div>
           <div className="profile-button"><Link to="/register">register</Link></div>
@@ -24,6 +22,8 @@ class Main extends React.Component {
 }
 
 function mapStateToProps(state) {
+  console.log('STATE: MAIN')
+  console.log(state)
   return {
     testState: state.viewAccount,
     postLogin: state.postLoginReducer
