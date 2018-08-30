@@ -9,7 +9,8 @@ import {
 
 export function* fetchViewAccount(action) {
   try {
-    const data = yield viewAccount()
+    console.log('action sagas viewacc',action.payload)
+    const data = yield call(viewAccount,action.payload)
     yield put({type: REQUEST_ACCOUNT_DETAIL_SUCCESS, data})
   } catch (e) {
     yield put({type: REQUEST_ACCOUNT_DETAIL_FAILED, errData: {message: e.message, code: e.code}})

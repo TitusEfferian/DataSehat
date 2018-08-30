@@ -10,6 +10,7 @@ import registerServiceWorker from './registerServiceWorker'
 import configureStore from './configureStore'
 import {Provider} from 'react-redux'
 import Login from './pages/Login';
+import MedicalResult from './pages/MedicalResult';
 
 const store = configureStore()
 const history = syncHistoryWithStore(browserHistory, store)
@@ -17,7 +18,8 @@ const history = syncHistoryWithStore(browserHistory, store)
 ReactDOM.render(<Provider store={store}>
   <Router history={history}>
     <Route>
-      <Route path='/dashboard' component={App}/>
+      <Route exact path="/" component={App}></Route>
+      <Route path='/dashboard' component={MedicalResult}/>
       <Route path='/login' component={Login}/>
       <Route path='/register' component={Register}/>
       <Route path='/input_record' component={InputData}/>

@@ -16,7 +16,7 @@ class Main extends React.Component {
         }}></div>
         <div className="bottom-navigation">
           <div className="login-button"><Link to="/login">login</Link></div>
-          <div className="profile-button">register</div>
+          <div className="profile-button"><Link to="/register">register</Link></div>
         </div>
       </div>
     )

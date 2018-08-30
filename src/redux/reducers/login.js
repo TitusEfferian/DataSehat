@@ -16,7 +16,7 @@ export const request = (state, action) => {
 
 export const success = (state, action) => {
     return {
-        ...state,data:action.globalData.data
+        ...state,isFetching:false,data:action.globalData.data
     }
 }
 
