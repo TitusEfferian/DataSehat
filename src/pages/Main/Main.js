@@ -1,9 +1,11 @@
 import React from 'react'
-import {requestAccountDetail} from '../../redux/actions/viewAccount'
-import {connect} from 'react-redux'
+import { requestAccountDetail } from '../../redux/actions/viewAccount'
+import { connect } from 'react-redux'
 import './Main.css'
 
 class Main extends React.Component {
+
+
   render() {
     console.log(this.props)
     return (
@@ -11,6 +13,10 @@ class Main extends React.Component {
         <div className="box" onClick={() => {
           this.props.requestAccountDetail()
         }}></div>
+        <div className="bottom-navigation">
+          <div className="login-button">login</div>
+          <div className="profile-button">register</div>
+        </div>
       </div>
     )
   }
