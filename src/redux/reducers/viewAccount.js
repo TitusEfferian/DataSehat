@@ -1,4 +1,4 @@
-import { BUTTON_PLUS_CLICKED, BUTTON_PLUS_SUCCESS, BUTTON_PLUS_FAILURE } from "../actions/types";
+import { REQUEST_ACCOUNT_DETAIL, REQUEST_ACCOUNT_DETAIL_SUCCESS, REQUEST_ACCOUNT_DETAIL_FAILED } from "../actions/types";
 
 export const INITIAL_STATE = {
     data: undefined,
@@ -32,11 +32,11 @@ export const failure = (state, action) => {
 
 export const reducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case BUTTON_PLUS_CLICKED:
+        case REQUEST_ACCOUNT_DETAIL:
             return request(state, action)
-        case BUTTON_PLUS_SUCCESS:
+        case REQUEST_ACCOUNT_DETAIL_SUCCESS:
             return success(state, action)
-        case BUTTON_PLUS_FAILURE:
+        case REQUEST_ACCOUNT_DETAIL_FAILED:
             return failure(state, action)
         default:
             return state

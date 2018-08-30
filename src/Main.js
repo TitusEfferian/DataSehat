@@ -1,24 +1,24 @@
 import React from 'react';
-import { buttonPlusClicked } from "./redux/actions/buttonClicked";
+import {requestAccountDetail} from "./redux/actions/viewAccount";
 import { connect } from "react-redux";
 class Main extends React.Component {
     render() {
         console.log(this.props)
         return (
             <div className="App">
-                <div className="box" onClick={() => { this.props.buttonClicked() }}></div>
+                <div className="box" onClick={() => { this.props.requestAccountDetail() }}></div>
             </div>
         )
     }
 }
 function mapStateToProps(state) {
     return {
-        testState: state.buttonClicked
+        testState: state.viewAccount
     }
 }
 function mapDispatchToProps(dispatch) {
     return {
-        buttonClicked: () => dispatch(buttonPlusClicked())
+        requestAccountDetail: () => dispatch(requestAccountDetail())
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Main);
