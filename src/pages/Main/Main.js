@@ -1,6 +1,7 @@
 import React from 'react'
-import {requestAccountDetail} from './redux/actions/viewAccount'
+import {requestAccountDetail} from '../../redux/actions/viewAccount'
 import {connect} from 'react-redux'
+import './Main.css'
 
 class Main extends React.Component {
   render() {
